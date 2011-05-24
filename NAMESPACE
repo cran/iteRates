@@ -1,0 +1,1 @@
+export(comp.subs,id.subtrees,FP.comp.subs,tab.summary,tree.na.Count,trimTree,comp.fit.subs,color.tree.plot)
