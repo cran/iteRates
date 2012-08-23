@@ -29,9 +29,6 @@ A list that consists of the following:
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Premal Shah, Benjamin Fitzpatrick and James Fordyce.
 }

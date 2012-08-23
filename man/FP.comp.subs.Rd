@@ -51,7 +51,7 @@ A list that consists of the following:
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+\references{Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution.
 %% ~put references to the literature/web site here ~
 }
 \author{

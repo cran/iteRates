@@ -1,9 +1,11 @@
-color.tree.plot <-
-function(out, tree, p.thres=1, show.node.label=FALSE, NODE=TRUE, PADJ=NULL,scale=1,col.rank=TRUE,breaks=50,...)
+color.tree.plot<-function(out, tree, p.thres=1, evid.thres=0, PorE=1, show.node.label=FALSE, NODE=TRUE, PADJ=NULL,scale=1,col.rank=TRUE,breaks=50,...)
 {	
+	################################################################################
 	#Empty vectors to store width and colors of edges and nodes
+	################################################################################
 	ecolor <- rep(NA, length(tree$edge.length))
 	ewidth <- rep(1, length(tree$edge.length))
+
 
 #	subout <- out[out$p.val<p.thres & !is.na(out$p.val),]
 	subout <- out[!is.na(out$p.val),]
@@ -16,7 +18,11 @@ function(out, tree, p.thres=1, show.node.label=FALSE, NODE=TRUE, PADJ=NULL,scale
 	edges <- subout$node2
 	tree$node.label <- (length(tree$tip.label)+1):(2*length(tree$tip.label)-1)
 	
+
+	################################################################################
 	# Calc the ratios of expected rates of each subtree based on its best model
+	################################################################################
+
 	ratio <- c()
 
 	for(i in 1:length(edges))
@@ -35,7 +41,12 @@ function(out, tree, p.thres=1, show.node.label=FALSE, NODE=TRUE, PADJ=NULL,scale
 		ratio <- c(ratio,r2/r1)
 	}
 	
+
+	################################################################################
 	# Control the range of colors to be used
+	# This is based on the ratio of relative diversification rates
+	################################################################################
+
 	nb <- sum(ratio<1&ratio>0)
 	nr <- sum(ratio>1)
 
@@ -75,17 +86,33 @@ function(out, tree, p.thres=1, show.node.label=FALSE, NODE=TRUE, PADJ=NULL,scale
 		}
 	}
 
-	col <- col[subout$p.val<p.thres]
-	ratio <- ratio[subout$p.val<p.thres]
-	subout <- subout[subout$p.val<p.thres,]
-	edges <- subout$node2
 
-	# Adjust p-values based on bonferroni or other. No adjustment if PADJ=NULL
-	pvals <- subout$p.val
-	if(is.character(PADJ))
-	{	pvals <- p.adjust(pvals, method=PADJ)
+	################################################################################
+	# Identifying nodes/edges to be highlighted based either on p.val or EvidRatio
+	################################################################################
+
+	switch(PorE,
+	{	# Adjust p-values based on bonferroni or other. No adjustment if PADJ=NULL
+		if(is.character(PADJ))
+		{	subout$p.val <- p.adjust(subout$p.val, method=PADJ)
+		}
+		col <- col[subout$p.val<p.thres]
+		ratio <- ratio[subout$p.val<p.thres]
+		subout <- subout[subout$p.val<p.thres,]
+		edges <- subout$node2
+		scl <- 1.5*exp(-2*subout$p.val)*scale
+	},
+	{	col <- col[subout$E>evid.thres]
+		ratio <- ratio[subout$E>evid.thres]
+		subout <- subout[subout$E>evid.thres,]
+		edges <- subout$node2
+		scl <- 1.5*exp(-2*subout$p.val)*scale
 	}
-	scl <- 1.5*exp(-2*pvals)*scale
+	)
+
+	################################################################################
+	# Plotting the tree with highlighted nodes or edges
+	################################################################################
 
 	if(NODE)			# Color on nodes
 	{	plot.phylo(tree, show.node.label=show.node.label,...)
@@ -99,4 +126,3 @@ function(out, tree, p.thres=1, show.node.label=FALSE, NODE=TRUE, PADJ=NULL,scale
 		plot.phylo(tree, edge.color=ecolor, edge.width=ewidth,show.node.label=show.node.label,...)
 	}
 }
-

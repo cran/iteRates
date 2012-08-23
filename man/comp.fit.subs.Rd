@@ -5,7 +5,7 @@
 comp.fit.subs
 }
 \description{
-This function compares rate estimates among defined subtrees and evaluates various groupings from 1 to k groups for these subtrees.
+The function implements the K-clades parametric rate comparison test. This function compares rate estimates among defined subtrees and evaluates various groupings from 1 to k groups for these subtrees.
 }
 \usage{
 comp.fit.subs(trees, focal, k, mod.id = c(1, 0, 0, 0), min.val = 0.01)
@@ -47,7 +47,7 @@ A dataframe that consists of the following:
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+\references{Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution.
 %% ~put references to the literature/web site here ~
 }
 \author{

@@ -7,7 +7,7 @@ color.tree.plot
 This function plots phylogenetic trees on the current graphical device and indicates potential regions of the tree that might have undergone a shift in diversification rate. 
 }
 \usage{
-color.tree.plot(out, tree, p.thres = 1, show.node.label = FALSE, 
+color.tree.plot(out, tree, p.thres = 1, evid.thres=0, PorE=1, show.node.label = FALSE, 
 NODE = TRUE, PADJ = NULL, scale = 1, col.rank = TRUE, breaks = 50, ...)
 }
 %- maybe also 'usage' for other objects documented here.
@@ -19,7 +19,13 @@ the output object from \code{comp.subs}.
 an object of class "phylo" used in the \code{comp.subs} analysis.
 }
   \item{p.thres}{
-a numeric between 0 and 1 setting the threshold to plot rate-shifts with p-value<=\code{p.thres}. Default is 0.05.
+a numeric between 0 and 1 setting the threshold to plot rate-shifts with p-value<=\code{p.thres}. Default is 1.0.
+}
+  \item{evid.thres}{
+a numeric setting the threshold to plot rate-shifts with evidence ratio >=\code{evid.thres}. Default is 0.
+}
+  \item{PorE}{
+a switch to indicate whether rate-shifts are indicated based on the p-value (\code{PorE=1}) or the evidence ratio (\code{PorE=1}).
 }
   \item{show.node.label}{
 a logical indicating whether the node labels need to be plotted with the tree. Default is FALSE.
@@ -51,7 +57,7 @@ Also make sure that the tree passed to \code{color.tree.plot} is the same as the
 \code{color.tree.plot} returns only a graphical device output.
 }
 \references{
-Shah, P., Fitzpatrick, B. and Fordyce, J. (2011) "A parametric method for assessing rate variation in phylogenetic trees."
+Shah, P., Fitzpatrick, B. and Fordyce, J. (2012) "A parametric method for assessing rate variation in phylogenetic trees."
 }
 \author{
 Premal Shah, Benjamin Fitzpatrick and James A. Fordyce.

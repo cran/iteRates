@@ -39,14 +39,11 @@ A number indicating the number of NAs in the given tree.
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+\references{Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution.
 %% ~put references to the literature/web site here ~
 }
 \author{
 Premal Shah, Benjamin Fitzpatrick and James Fordyce.
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~

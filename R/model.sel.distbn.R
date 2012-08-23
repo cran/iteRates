@@ -20,8 +20,8 @@ function(delta, x, min.branch, mod.id){
 	AICs <- replace(AICs,mod.id==FALSE,NA)
 	best.model.indx <- which(AICs==min(AICs,na.rm=TRUE))
 	
-	a<-data.frame(out[[best.model.indx]],best.model.indx,num.par[best.model.indx])
-	names(a) <- c("P1","P2","LL","Mod","n")
+	a<-data.frame(out[[best.model.indx]],AICs[best.model.indx],best.model.indx,num.par[best.model.indx])
+	names(a) <- c("P1","P2","LL","AICc","Mod","n")
 	return(a)
 	}
 

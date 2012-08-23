@@ -5,11 +5,11 @@
 comp.subs
 }
 \description{
-  The function iterates through all subtrees of a phylogenetic tree and compares the distribution of branch lengths in the subtree to the "remainder" tree. It is intended to be used with a chronogram in order to test whether diversification rates differ among clades within a broader phylogeny. A variety of truncated distributions can be used and compared via likelihood.
+ The function implements the parametric rate comparison test. The function iterates through all subtrees of a phylogenetic tree and compares the distribution of branch lengths in the subtree to the "remainder" tree. It is intended to be used with a chronogram in order to test whether diversification rates differ among clades within a broader phylogeny. A variety of truncated distributions can be used and compared via likelihood.
 }
 \usage{
 comp.subs(tree, thr = 6, srt = "drop", min.val = 0.01,
-mod.id = c(1, 0, 0, 0))
+mod.id = c(1, 0, 0, 0),verbose=TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -28,13 +28,15 @@ Replacement of zero-length branches with a small positive number to avoid spurio
   \item{mod.id}{
 Indicator vector specifying statistical distributions to be fit to the data. In order, the distributions are exponential, Weibull, lognormal, and variable rates \cite{Venditti et al. 2010}. Default is exponential only.
 }
+  \item{verbose}{
+A logical indicating whether progress is updated on the screen}
 }
 \details{
  All distributions are fit using the likelihood for the truncated form %\cite{our paper}. Lognormal is known to give biased estimates of the mean for fat-tailed or multimodal distributions, and the expectation is undefined for some parameter values of the variable rates distribution.
 
 }
 \value{
-A data frame containing up to 14 variables for each subtree of \code{tree}. Each row corresponds to a subtree and the order is that returned by the function \code{subtrees}. Subtrees that are not tested (owing to failure to meet the \code{thr} threshold) have NA's for all variables:
+A data frame containing up to 15 variables for each subtree of \code{tree}. Each row corresponds to a subtree and the order is that returned by the function \code{subtrees}. Subtrees that are not tested (owing to failure to meet the \code{thr} threshold) have NA's for all variables:
 
   \item{Par1.tot }{First estimated parameter of the best fit model for the pooled edge lengths of the subtree and remainder tree. For exponential, this is the rate. For Weibull it is the "shape" parameter. For lognormal it is mu. For the variable rates distribution it is alpha.}
   \item{Par2.tot}{Second estimated parameter of the best fit model for the pooled edge lengths. For exponential, it is NA. For Weibull it is the "scale" parameter. For lognormal, it is sigma. For variable rates, it is beta.}
@@ -50,7 +52,7 @@ A data frame containing up to 14 variables for each subtree of \code{tree}. Each
   \item{node1}{Identifies the node corresponding to the most recent common ancestor of the subtree and its sister clade. That is, the node ancestral to the branch along which a rate change might have occured.}
   \item{node2}{Identifies the most recent common ancestor of all taxa in the subtree. That is, the descendant node of the branch along which a rate chage might have occurred.}
   \item{p.val}{P-value from the likelihood ratio test of the two-rate vs. one-rate model for the subtree defined by \code{node2}}
-
+  \item{EvidRatio}{The evidence ratio from the AICc scores of the two-rate vs. one-rate model for the subtree defined by \code{node2}}
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -58,21 +60,16 @@ A data frame containing up to 14 variables for each subtree of \code{tree}. Each
 %% ...
 }
 \references{
+Shah, P., B. M. Fitzpatrick, and J. A. Fordyce.  A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution. 
 Venditti, C., A. Meade, and M. Pagel, 2010. Phylogenies reveal new interpretation of speciation and the red queen. Nature 463:349-352.
 %add our paper
 }
 \author{
 Premal Shah, James A. Fordyce, Benjamin M. Fitzpatrick
 }
-\note{
-%%  ~~further notes~~
-}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 data(geospiza)
 attach(geospiza)
