@@ -27,7 +27,7 @@ If true, progress will be indicated by printing to the screen.
 
 }
 \details{
-This function ... .
+This function addresses the potential for spurious inference of diversification rate variation when a phylogeny deviates from the pure birth model. Deviation from pure birth (e.g., when extinction is important or speciation probabilities change over time) distorts the distribution of branching times such that internode lengths do not satisfy the independent and identical distribution (iid) assumption of the PRC test. This function distinguishes among-clade rate variation from rate variation through time by holding the set of branching times constant and randomizing tree topologies. That is, it simulates the null hypothesis that speciation and extinction probabilities are constant across lineages at any given time. The function provides a null distribution for the false detection rate - the fraction of subtrees appearing to have deviant diversification rates when there is no true among-clade rate variation.
 }
 \value{
 A list that consists of the following:

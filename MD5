@@ -1,4 +1,4 @@
-745f914ca73b0e9a4c321cbc083e43a8 *DESCRIPTION
+a16a171c1161a8669ef431de1c3ff275 *DESCRIPTION
 6f69621c9a1c28824ba228fb5204a4c5 *NAMESPACE
 12d36bc1191b80efc7488d48bd2ab51c *R/BOTHlabels2.R
 9183e6e447fa172725ebb6d85b0adb93 *R/CompareSubTrees.k.R
@@ -57,5 +57,5 @@ b8072b3da647ca5faba5d62993a77fd1 *man/id.subtrees.rd
 d191b641b664a6728154fb263ec5f64b *man/iterates-package.rd
 cddad4f893c4de2ffdaecb5ce5b7d718 *man/tab.summary.rd
 8a67d73d472fcb1c81cc3ed863dc50d5 *man/tree.na.count.rd
-110a99df3728dcca67edea7a646c0056 *man/tree.rand.test.rd
+0c9d41222afadaf8bd1c9e89af0622fd *man/tree.rand.test.Rd
 d36a701229ff2a1f415f7dc6c45a0cec *man/trimtree.rd
