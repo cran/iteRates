@@ -39,7 +39,7 @@ A number indicating the number of NAs in the given tree.
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution.
+\references{Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. 2013. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution 67:368-377.
 %% ~put references to the literature/web site here ~
 }
 \author{
@@ -52,8 +52,9 @@ Premal Shah, Benjamin Fitzpatrick and James Fordyce.
 \code{FP.comp.subs}
 }
 \examples{
+	\dontrun{
 data(geospiza)
 tree<-geospiza$geospiza.tree
 tree.na.Count(tree)
-
+}
 }

@@ -7,8 +7,8 @@ function(tree.size,na.present,sims=100,missing=0,alpha=0.05,verbose=FALSE,...){
 		cat("*")
 	
 		x<-birthdeath.tree.geiger1.3.1(1,0,taxa.stop=tree.size+missing+1)
-		x<-drop.tip(x,tip=as.character(tree.size+missing+1))
-		if(missing>0)x<-drop.tip(x,sample(as.character(1:tree.size),size=missing))
+		x<-drop.tip2.6(x,tip=as.character(tree.size+missing+1))
+		if(missing>0)x<-drop.tip2.6(x,sample(as.character(1:tree.size),size=missing))
 		isNA<-tree.na.Count(x)
 			if(isNA==na.present){
 				loop<-loop+1

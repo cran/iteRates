@@ -29,6 +29,9 @@ A list that consists of the following:
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
+\references{
+Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. 2013. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution 67:368-377. 
+}
 \author{
 Premal Shah, Benjamin Fitzpatrick and James Fordyce.
 }
@@ -42,6 +45,7 @@ This function will rename all node labels.
 \code{comp.fit.subs}
 }
 \examples{
+	\dontrun{
 data(hivtree.newick)
 cat(hivtree.newick, file = "hivtree.phy", sep = "\n") 
 tree.hiv <- read.tree("hivtree.phy") # load tree 
@@ -49,7 +53,7 @@ unlink("hivtree.phy") # delete the file "hivtree.phy"
 
 idHIV<-id.subtrees(tree.hiv)
 plot(idHIV$tree,show.node.label=TRUE)
-}
+}}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }

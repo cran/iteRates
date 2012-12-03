@@ -11,7 +11,7 @@ function(tree,thr=6,srt="drop",min.val=0.01,mod.id=c(1,0,0,0)){
 	tree$node.label <- (length(tree$tip.label)+1):(2*length(tree$tip.label)-1)
 	x <- tree$edge.length
 	delta <- tree$edge[,2]>length(tree$tip.label)
-	subs=subtrees(tree)
+	subs=subtrees2.6(tree)
 	tests=matrix(NA,nrow=N/2,ncol=14)
 		for(i in 2:(N/2)){
 				

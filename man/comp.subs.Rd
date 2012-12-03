@@ -32,7 +32,7 @@ Indicator vector specifying statistical distributions to be fit to the data. In 
 A logical indicating whether progress is updated on the screen}
 }
 \details{
- All distributions are fit using the likelihood for the truncated form %\cite{our paper}. Lognormal is known to give biased estimates of the mean for fat-tailed or multimodal distributions, and the expectation is undefined for some parameter values of the variable rates distribution.
+ All distributions are fit using the likelihood for the truncated form %\cite{our paper}. Lognormal is known to give biased estimates of the mean for fat-tailed or multimodal distributions. The variable rates distribution is defined for alpha greater than or equal to 1 because the expectation is undefined for alpha less than one %\cite{our paper}. 
 
 }
 \value{
@@ -60,7 +60,7 @@ A data frame containing up to 15 variables for each subtree of \code{tree}. Each
 %% ...
 }
 \references{
-Shah, P., B. M. Fitzpatrick, and J. A. Fordyce.  A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution. 
+Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. 2013 A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution 67:368-377. 
 Venditti, C., A. Meade, and M. Pagel, 2010. Phylogenies reveal new interpretation of speciation and the red queen. Nature 463:349-352.
 %add our paper
 }

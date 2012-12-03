@@ -115,14 +115,14 @@ color.tree.plot<-function(out, tree, p.thres=1, evid.thres=0, PorE=1, show.node.
 	################################################################################
 
 	if(NODE)			# Color on nodes
-	{	plot.phylo(tree, show.node.label=show.node.label,...)
-		edgelabels(edge=match(edges,tree$edge[,2]),pch=19, col=col,cex=2*scl)
+	{	plot.phylo2(tree, show.node.label=show.node.label,...)
+		edgelabels2(edge=match(edges,tree$edge[,2]),pch=19, col=col,cex=2*scl)
 	}
 	else				# Color on edges
 	{	ecolor[match(edges,tree$edge[,2])] <- col
 		ecolor[is.na(ecolor)] <- "black"
 		ewidth[match(edges,tree$edge[,2])] <- scl
 		
-		plot.phylo(tree, edge.color=ecolor, edge.width=ewidth,show.node.label=show.node.label,...)
+		plot.phylo2(tree, edge.color=ecolor, edge.width=ewidth,show.node.label=show.node.label,...)
 	}
 }

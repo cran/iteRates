@@ -34,7 +34,7 @@ A list that consists of the following:
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution.
+\references{Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. 2013. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution 67:368-377.
 %% ~put references to the literature/web site here ~
 }
 \author{
@@ -44,6 +44,7 @@ Premal Shah, Benjamin Fitzpatrick and James Fordyce.
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \examples{
+	\dontrun{
 data(hivtree.newick)
 cat(hivtree.newick, file = "hivtree.phy", sep = "\n") 
 tree.hiv <- read.tree("hivtree.phy") # load tree 
@@ -56,6 +57,5 @@ plot.phylo(trim.hiv$o.tree);plot.phylo(trim.hiv$t.tree)
 # Identify the names of the original terminal taxa 
 # that correspond to the newly defined, numbered tips.
 trim.hiv$t.tree$new.tip.clades
-
-
+}
 }

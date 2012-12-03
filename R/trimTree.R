@@ -25,7 +25,7 @@ function(phy,Time){
 						}
 				todrop<-which(apply(ns,1,diff)==1)
 				phy$edge.length<-Realedge
-				phy<-drop.tip(phy,tip=ns[todrop,1])
+				phy<-drop.tip2.6(phy,tip=ns[todrop,1])
 				phy$tip.label<-1:length(phy$tip.label)
 				phy$node.label<-(length(phy$tip.label)+1):(length(phy$tip.label)+length(phy$tip.label)-1)
 				

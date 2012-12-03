@@ -1,12 +1,12 @@
-subtreez <- function(tree, From, To, wait = FALSE) 
+subtrees2.6 <- 
+function (tree, wait = FALSE) 
 {
     N.tip <- Ntip(tree)
     N.node <- Nnode(tree)
-    start <- N.tip + From
-    limit <- N.tip + To
-    sub <- list(N.node[From:To])
+    limit <- N.tip + N.node
+    sub <- list(N.node)
     u <- 0
-    for (k in start:limit) {
+    for (k in (N.tip + 1):limit) {
         u <- u + 1
         if (wait == TRUE) 
             cat("wait... Node", u, "out of", N.node, "treated\n")
@@ -22,16 +22,16 @@ subtreez <- function(tree, From, To, wait = FALSE)
                 break
         }
         len <- res[res > N.tip]
-        #if (u == 1) {
-         #   tree2 <- tree
-          #  len <- (N.tip + 1):limit
-        #}
-        #else {
+        if (u == 1) {
+            tree2 <- tree
+            len <- (N.tip + 1):limit
+        }
+        else {
             len.tip <- res[res < N.tip + 1]
             vec <- 1:length(tree$tip.label)
             len.tip.stay <- setdiff(vec, len.tip)
-            tree2 <- drop.tip2.6(tree, len.tip.stay)
-       # }
+            tree2 <- drop.tip(tree, len.tip.stay)
+        }
         sub[[u]] <- tree2
         sub[[u]]$name <- k
         sub[[u]]$Ntip <- Ntip(tree2)

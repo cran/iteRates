@@ -40,7 +40,7 @@ A dataframe that consists of the following:
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution.
+\references{Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. 2013. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution 67:368-377.
 %% ~put references to the literature/web site here ~
 }
 \author{
@@ -55,6 +55,7 @@ Premal Shah, Benjamin Fitzpatrick and James Fordyce.
 
 }
 \examples{
+	\dontrun{
 data(hivtree.newick)
 cat(hivtree.newick, file = "hivtree.phy", sep = "\n") 
 tree.hiv <- read.tree("hivtree.phy") # load tree 
@@ -66,9 +67,7 @@ cfsHIV<-comp.fit.subs(idHIV$subtree,focal=c(153,119,96,5),k=4)
 tab.summary(cfsHIV)
 tab.summary(cfsHIV,daic=1)
 tab.summary(cfsHIV,daic=0.01)
-
-
-
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

@@ -18,7 +18,7 @@ function(tabtabres,trees,focal){
 					rowtocal<-dim(tabtabres)[1]
 					P1s<-seq(from=3,to=dim(tabtabres)[2],by=5)
 					P2s<-seq(from=4,to=dim(tabtabres)[2],by=5)
-					mIDs<-seq(from=6,to=dim(tabtabres)[2],by=5)
+					mIDs<-seq(from=7,to=dim(tabtabres)[2],by=5)###Changed this from from=6 to from=7
 
 					rAtes<-array(dim=c(rowtocal,ratetocalc))
 					ratcn<-NA

@@ -51,7 +51,7 @@ A list that consists of the following:
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution.
+\references{Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. 2013. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution 67:368-377.
 %% ~put references to the literature/web site here ~
 }
 \author{
@@ -68,11 +68,12 @@ Premal Shah, Benjamin Fitzpatrick and James Fordyce.
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
+	\dontrun{
 data(geospiza)
 tree<-geospiza$geospiza.tree
 na.count<-tree.na.Count(tree)
 FP.comp.subs(tree.size=14,na.present=na.count,verbose=TRUE)
-
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

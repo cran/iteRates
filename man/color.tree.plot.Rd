@@ -57,7 +57,7 @@ Also make sure that the tree passed to \code{color.tree.plot} is the same as the
 \code{color.tree.plot} returns only a graphical device output.
 }
 \references{
-Shah, P., Fitzpatrick, B. and Fordyce, J. (2012) "A parametric method for assessing rate variation in phylogenetic trees."
+Shah, P., B. M. Fitzpatrick, and J. A. Fordyce. 2013. A parametric method for assessing diversification rate variation in phylogenetic trees. Evolution 67:368-377.
 }
 \author{
 Premal Shah, Benjamin Fitzpatrick and James A. Fordyce.

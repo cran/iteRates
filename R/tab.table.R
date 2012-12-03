@@ -9,8 +9,8 @@ function(cst){
 		P1<-as.numeric(ul[names(ul)==nms[3]])
 		P2<-as.numeric(ul[names(ul)==nms[4]])
 		lik<-as.numeric(ul[names(ul)==nms[5]])
-		modID<-as.numeric(ul[names(ul)==nms[6]])
-		tn<-as.numeric(ul[names(ul)==nms[7]])
+		modID<-as.numeric(ul[names(ul)==nms[7]])#change from 6 to 7
+		tn<-as.numeric(ul[names(ul)==nms[8]])#change from 7 to8
 		sumcomp[[i]]<-list(k=k,groups=groups,P1=P1,P2=P2,lik=lik,modID=modID,tn=tn)
 		}
 	Sumcomp<-list()

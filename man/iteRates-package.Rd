@@ -12,7 +12,7 @@ Iterates through a phylogenetic tree to identify regions of rate variation using
 \tabular{ll}{
 Package: \tab iteRates\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
+Version: \tab 3.0\cr
 Date: \tab 2011-05-24\cr
 License: \tab GPL 3.0\cr
 LazyLoad: \tab yes\cr
@@ -23,6 +23,6 @@ The user provides a phylogenetic tree of object class phylo. The package will it
 Premal Shah, Benjamin Fitzpatrick and James Fordyce.
 
 Maintainer:
-James A. Fordyce <jfordyce@utk.edu>
+Ben Fitzpatrick <benfitz@utk.edu>
 }
 
